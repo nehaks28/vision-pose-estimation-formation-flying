@@ -50,6 +50,38 @@ pip install -r requirements.txt                         # numpy, scipy, matplotl
 ```
 Trained weights (`artifacts/ann_weights.npz`, ~2 MB) are committed, so you can run the demo immediately.
 
+## Run
+```bash
+python scripts/demo.py --seed 3            # live-demo scenario: prints a table, writes results/demo.gif
+python scripts/demo.py --seed 3 --live     # same, with an interactive matplotlib window
+python scripts/run_experiment.py --seeds 10   # full comparison (≈1 min), writes results/*.png|json
+python scripts/noise_sweep.py --seeds 5       # robustness to detector noise
+python scripts/export_dataset.py              # regenerate the dataset CSVs into ../pose-dataset/
+python scripts/train_ann.py --data-dir ../pose-dataset   # retrain on the dataset CSVs (≈9 min on 1 CPU core)
+python tests/test_data.py                  # data tests (or: python -m pytest -q)
+python tests/test_filters.py               # filter tests
+```
+
+## Results (10 random 10 s approach trajectories, mean ± std over trajectories)
+ANN on the held-out test set: **top-1 69.6 %**, top-5 96.0 %, 98.3 % within one neighbouring cell (paper: 54 % top-1).
+
+| Method | Position error (m) | Roll error (deg) |
+|---|---|---|
+| ANN only | 5.32 ± 0.31 | 4.51 ± 0.58 |
+| ANN + PF (paper cfg 1: N=1000, α=0.9 every 10 cycles, inverse-MSE) | 0.96 ± 0.25 | 1.09 ± 0.20 |
+| ANN + PF (paper cfg 2: N=5000, α=0.9 every cycle, inverse-MSE) | 0.70 ± 0.09 | 0.80 ± 0.14 |
+| ANN + PF (Gaussian likelihood, N=2000, α=0.5) | 0.62 ± 0.09 | 0.96 ± 0.09 |
+| **ANN + Gauss-Newton refinement (ours)** | **0.25 ± 0.04** | **0.18 ± 0.03** |
+
+Noise sweep: at 0.5–1 px detector noise the per-frame refinement is best; from ≈ 2 px up the temporal Gaussian PF
+wins because it averages over frames (see `results/noise_sweep.png`).
+
+## Differences from the paper (please read)
+* The paper's PF barely improved on the ANN; ours improves it ~7×. Our simulator is simpler (known-exact camera
+  model, Gaussian detector noise, no outliers, 4-DoF state), so absolute numbers are **not** comparable to the paper.
+* Feature detection (the paper's CNN stage) is out of scope there and here: the simulator provides detections directly.
+* Self-occlusion uses surface normals, not ray tracing; PF particles ignore occlusion (as in the paper).
+
 ## Layout
 ```
 poseest/        config, aircraft+camera model, discretisation, dataset, ANN, dynamics, particle_filter, refine, pipeline
