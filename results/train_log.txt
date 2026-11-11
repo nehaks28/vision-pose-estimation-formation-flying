@@ -1,0 +1,45 @@
+train (300000, 42)  val (30000, 42)  test (30000, 42); classes used in train: 4771/4800
+epoch  1/30  loss 3.910  val-acc 0.268  (17s)
+epoch  2/30  loss 2.219  val-acc 0.363  (16s)
+epoch  3/30  loss 1.809  val-acc 0.422  (17s)
+epoch  4/30  loss 1.581  val-acc 0.465  (17s)
+epoch  5/30  loss 1.427  val-acc 0.489  (17s)
+epoch  6/30  loss 1.309  val-acc 0.514  (17s)
+epoch  7/30  loss 1.217  val-acc 0.534  (17s)
+epoch  8/30  loss 1.138  val-acc 0.553  (17s)
+epoch  9/30  loss 1.074  val-acc 0.568  (17s)
+epoch 10/30  loss 1.016  val-acc 0.581  (17s)
+epoch 11/30  loss 0.966  val-acc 0.586  (17s)
+epoch 12/30  loss 0.920  val-acc 0.599  (17s)
+epoch 13/30  loss 0.883  val-acc 0.608  (17s)
+epoch 14/30  loss 0.845  val-acc 0.617  (17s)
+epoch 15/30  loss 0.813  val-acc 0.625  (18s)
+epoch 16/30  loss 0.785  val-acc 0.629  (17s)
+epoch 17/30  loss 0.757  val-acc 0.642  (17s)
+epoch 18/30  loss 0.733  val-acc 0.646  (17s)
+epoch 19/30  loss 0.710  val-acc 0.656  (17s)
+epoch 20/30  loss 0.689  val-acc 0.652  (18s)
+epoch 21/30  loss 0.671  val-acc 0.663  (18s)
+epoch 22/30  loss 0.654  val-acc 0.670  (18s)
+epoch 23/30  loss 0.638  val-acc 0.670  (17s)
+epoch 24/30  loss 0.624  val-acc 0.675  (17s)
+epoch 25/30  loss 0.611  val-acc 0.677  (17s)
+epoch 26/30  loss 0.598  val-acc 0.680  (17s)
+epoch 27/30  loss 0.586  val-acc 0.683  (17s)
+epoch 28/30  loss 0.577  val-acc 0.690  (17s)
+epoch 29/30  loss 0.566  val-acc 0.691  (17s)
+epoch 30/30  loss 0.558  val-acc 0.695  (17s)
+{
+  "test_top1": 0.6958666666666666,
+  "test_top5": 0.9598666666666666,
+  "test_within_one_cell": 0.9831333333333333,
+  "test_pos_err_mean_m": 5.630458251199178,
+  "test_pos_err_median_m": 5.4040311979868285,
+  "test_roll_err_mean_deg": 4.3286805920381495,
+  "cell_size": [
+    15.0,
+    10.0,
+    5.0,
+    15.0
+  ]
+}
