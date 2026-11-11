@@ -1,0 +1,37 @@
+{
+  "0.5": {
+    "ANN only": 5.234360716967212,
+    "ANN + PF (paper cfg 1: N=1000, a=0.9 / 10 cycles)": 0.8645370089255693,
+    "ANN + PF (paper cfg 2: N=5000, a=0.9 every cycle)": 0.7139798741222558,
+    "ANN + PF (Gaussian lik., N=2000, a=0.5)": 0.6065253385527611,
+    "ANN + Gauss-Newton refinement (ours)": 0.2224352866330645
+  },
+  "1.0": {
+    "ANN only": 5.328770235827191,
+    "ANN + PF (paper cfg 1: N=1000, a=0.9 / 10 cycles)": 1.120669945549508,
+    "ANN + PF (paper cfg 2: N=5000, a=0.9 every cycle)": 0.8689970565129979,
+    "ANN + PF (Gaussian lik., N=2000, a=0.5)": 0.6091329674151336,
+    "ANN + Gauss-Newton refinement (ours)": 0.4448267549699759
+  },
+  "2.0": {
+    "ANN only": 5.522417000112804,
+    "ANN + PF (paper cfg 1: N=1000, a=0.9 / 10 cycles)": 1.304658923301006,
+    "ANN + PF (paper cfg 2: N=5000, a=0.9 every cycle)": 1.0630382784306494,
+    "ANN + PF (Gaussian lik., N=2000, a=0.5)": 0.6375883200741957,
+    "ANN + Gauss-Newton refinement (ours)": 0.8894984947475377
+  },
+  "4.0": {
+    "ANN only": 6.180049323552447,
+    "ANN + PF (paper cfg 1: N=1000, a=0.9 / 10 cycles)": 2.0163163689929444,
+    "ANN + PF (paper cfg 2: N=5000, a=0.9 every cycle)": 1.3967962937571798,
+    "ANN + PF (Gaussian lik., N=2000, a=0.5)": 0.885772606643062,
+    "ANN + Gauss-Newton refinement (ours)": 1.7785286336386512
+  },
+  "8.0": {
+    "ANN only": 7.798227497470603,
+    "ANN + PF (paper cfg 1: N=1000, a=0.9 / 10 cycles)": 3.4961698885624983,
+    "ANN + PF (paper cfg 2: N=5000, a=0.9 every cycle)": 2.1017536675504553,
+    "ANN + PF (Gaussian lik., N=2000, a=0.5)": 2.004181436713842,
+    "ANN + Gauss-Newton refinement (ours)": 3.556315917315846
+  }
+}

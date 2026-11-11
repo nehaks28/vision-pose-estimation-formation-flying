@@ -1,0 +1,32 @@
+{
+  "ANN only": {
+    "pos_mean_m": 5.321394316195493,
+    "pos_std_m": 0.30666705590495835,
+    "roll_mean_deg": 4.504706562621061,
+    "roll_std_deg": 0.581986574314213
+  },
+  "ANN + PF (paper cfg 1: N=1000, a=0.9 / 10 cycles)": {
+    "pos_mean_m": 0.9607521911513569,
+    "pos_std_m": 0.24627497326217487,
+    "roll_mean_deg": 1.0930690514201085,
+    "roll_std_deg": 0.20367269013080572
+  },
+  "ANN + PF (paper cfg 2: N=5000, a=0.9 every cycle)": {
+    "pos_mean_m": 0.7014972606339321,
+    "pos_std_m": 0.08902560170489643,
+    "roll_mean_deg": 0.798823233264288,
+    "roll_std_deg": 0.14179501296417904
+  },
+  "ANN + PF (Gaussian lik., N=2000, a=0.5)": {
+    "pos_mean_m": 0.6211632424773806,
+    "pos_std_m": 0.0887905995723101,
+    "roll_mean_deg": 0.9626561118172413,
+    "roll_std_deg": 0.08657957858400393
+  },
+  "ANN + Gauss-Newton refinement (ours)": {
+    "pos_mean_m": 0.24482884869297297,
+    "pos_std_m": 0.03500833457858451,
+    "roll_mean_deg": 0.1761752526950922,
+    "roll_std_deg": 0.03206244609915751
+  }
+}
